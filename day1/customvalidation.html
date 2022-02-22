@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: inline-block;
+            width: 80px;
+            padding:5px;
+        }
+        button{
+            margin-left: 94px;
+        }
+    </style>
+    <script>
+        var uage;
+        function init()
+        {
+            uage = document.getElementById("uage");
+            uage.setCustomValidity("Tell us how old are you");
+
+            uage.addEventListener("input",function()
+            {
+                if(uage.value == '')
+                {
+                    uage.setCustomeValidity("Enter Your age");
+                }
+                else if(uage.value <0)
+                {
+                    uage.setCustomValidity("Please enter correct age");
+                }
+                else if(uage.value > 90)
+                {
+                    uage.setCustomValidity("Please enter correct age that is less than 90");
+                }
+                else
+                uage.setCustomValidity("");
+            });
+            
+        }
+        onload = init;
+    </script>
+</head>
+<body>
+    <form action="" method="get">
+        <div>
+            <label for ="uname">User Name</label>
+            <input type="text" name="username" id="uname" placeholder="username" required/>
+        </div>
+        <div>
+            <label for ="uage">User Age</label>
+            <input name="userage" id="uage" placeholder="age" required/>
+        </div>
+        <div>
+            <label for ="uemail">User Email</label>
+            <input type="email" name="useremail" id="uemail" placeholder="email" pattern="\.@.\" required/>
+        </div>
+        <div>
+            <label for ="uphone">User Phone No.</label>
+            <input type="tel" name="userphone" id="uemail" placeholder="###-####-####" title="###-####-####" pattern="\d{3}-\d{4}-\d{4}" required/>
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
