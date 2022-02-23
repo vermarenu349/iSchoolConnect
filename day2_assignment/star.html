@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 2px solid red;
+            background-image: url("4.jpg");
+        }
+    </style>
+    <script>
+        var ele,elee;
+        addEventListener("load",init);
+        function init()
+        {
+            ele = document.getElementsByTagName("canvas")[0];
+            ele.width = 700;
+            ele.height = 700;
+            elee = ele.getContext("2d");
+            elee.moveTo(300,150);
+            elee.lineTo(200,350);
+            elee.lineTo(70,350);
+            elee.lineTo(200,450);
+            elee.lineTo(100,600);
+            elee.lineTo(300,450);
+            elee.lineTo(500,600);
+            elee.lineTo(400,450);
+            elee.lineTo(550,350);
+            elee.lineTo(400,350);
+            elee.lineTo(300,150);
+            elee.closePath();
+            elee.lineWidth = 10;
+            elee.strokeStyle = "green";
+            elee.strokeWidth = 15;
+            elee.fillStyle ="yellow";
+           elee.fill();
+           elee.stroke();
+            
+        }
+    </script>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+</html>
