@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        addEventListener("load", init);
+        function init(){
+            // console.log(navigator.onLine);
+            document
+            .getElementsByTagName("button")[0]
+            .addEventListener("click", clickHandler);
+            //------------------------------------------
+            document
+            .getElementsByTagName("button")[1]
+            .addEventListener("click", getHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click",removeHandler);
+        }
+        function clickHandler(){
+            // localStorage.user = ;
+            localStorage.setItem("user",document.getElementById("ti").value);
+        }
+        function getHandler(){
+           // console.log("User is : ", localStorage.user);
+           console.log(localStorage.getItem("user"))
+        }
+        function removeHandler(){
+            localStorage.removeItem(document.getElementById("ti").value);
+        }
+        function deleteAll(){
+            localStorage.clear();
+        }
+        function displayKeys() {
+            var x;
+            for (i = 0; i < localStorage.length; i++) {
+                 x = localStorage.key(i);
+                 document.getElementById("para").innerHTML = x;
+            }
+        };
+
+    </script>
+</head>
+<body>
+    <input type="text" id="ti">
+    <button>Store User</button>
+    <hr>
+    <button>Get User Name</button>
+    <button>Remove User</button>
+    <button>Delete All Users</button>
+    <button onclick="displayKeys()">show all keys</button>
+    <h4>Keys are:</h4>
+    <p id ="para"> </p>
+</body>
+</html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
