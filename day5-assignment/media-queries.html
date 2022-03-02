@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link media="screen" rel="stylesheet" href="style/all.css">
+    <link media="print" rel="stylesheet" href="style/print.css">
+    <link media="screen and (min-width : 700px)" rel="stylesheet" href="style/700px.css">
+    <link media="screen and (max-width : 900px)" rel="stylesheet" href="style/900px.css">
+    <link media="screen and (orientation : portrait)" rel="stylesheet" href="style/portrait.css">
+    <link media="screen and (orientation : landscape)" rel="stylesheet" href="style/landscape.css">
+    <link media="screen and (orientation : portrait) and (max-width : 900px)" rel="stylesheet" href="style/mix.css">
+
+    <script>
+        addEventListener("load",function(){
+            setInterval(function(){
+                document.getElementById("log").innerText = innerWidth + " px";
+            },500)
+        })
+    </script>
+</head>
+<body>
+    <h1 id="log"></h1>
+    <hr>
+    <section>
+        <article>1</article>
+        <article>2</article>
+        <article>3</article>
+        <article>4</article>
+        <article>5</article>
+        <article>6</article>
+        <article>7</article>
+        <article>8</article>
+        <p>A paragraph is a self-contained unit of discourse in writing dealing with a particular point or idea. 
+            A paragraph consists of one or more sentences. </p>
+        
+    </section>
+</body>
+</html>

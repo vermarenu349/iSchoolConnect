@@ -1,0 +1,12 @@
+section{
+    background-color: darkgoldenrod;
+    display: table;
+    padding: 20px;
+}
+article:last-child{
+    background-color: rgb(248, 9, 148);
+    font-size:20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border:2px solid yellow;
+
+}
