@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    h2,h3{
+        background-color: aqua;
+    }
+    li{
+        background-color: rgb(88, 187, 133);  
+        list-style-type: none;
+        padding:10px;
+        display: inline;
+    }
+    button{
+        margin-right:10px;
+        background-color: tomato;
+        height: 30px;
+    }
+    </style>
+    
+</head>
+<body>
+   
+</body>
+<script>
+    var arr = ["iSchool","Connect"];
+    var arr2 = ["study","abroad","with","us"];
+    document.write("<h2>Elements of first array are:</h2>");
+    for(i=0;i<arr.length;i++)
+    {
+        document.write("<li>" + arr[i] + "</li> ");
+    }
+    document.write("<h2>Elements of second array are:</h2>");
+    for(i=0;i<arr2.length;i++)
+    {
+        document.write("<li>" + arr2[i] + "</li> ");
+    }
+    document.write("<h2>Function to perform on above arrays:</h2>");
+    document.write("<button onclick='con()'>Concatenation</button>");
+    document.write("<button onclick='jo()'>Convert to String</button>");
+    document.write("<button onclick='last()'>Get Last Element of Array</button>");
+    document.write("<button onclick='first()'>Get First Element of Array</button>");
+    document.write("<button onclick='add_last()'>Add Element at last</button>");
+    document.write("<button onclick='add_first()'>Add Element at First</button>");
+    function con(){
+    document.write("<h3> Concatenate Array:</h3>")
+    var arr3 = arr.concat(arr2);
+    for(i=0;i<arr3.length;i++)
+    {
+        document.write(arr3[i] + " ");
+    }
+    }
+    function jo(){
+        document.write("<h3> Converting first Array to String:</h3>");
+        var arr3 = arr.join(' ');
+        document.write(arr3); 
+        document.write("<h3> Converting second Array to String:</h3>");
+        var arr4 = arr2.join(' ');
+        document.write(arr4);
+    }
+    function last(){
+        document.write("<h3>Last Element of first array is:</h3>");
+        document.write(arr.pop());
+        document.write("<h3>Last Element of Second array is:</h3>");
+        document.write(arr2.pop());   
+    }
+    function first(){
+        document.write("<h3>First Element of first array is:</h3>");
+        document.write(arr.shift());
+        document.write("<h3>First Element of Second array is:</h3>");
+        document.write(arr2.shift());   
+    }
+    
+    function add_last(){
+        value = prompt("Enter the value to be added in first array");
+        arr.push(value);
+        var arr3 = arr.join(' ');
+        document.write("<h3>first array is: </h3>");
+        document.write(arr3 + "<br>");
+
+        value2 = prompt("Enter the value to be added in second array");
+        arr2.push(value2);
+        var arr4 = arr2.join(' ');
+        document.write("<h3>Second array is: </h3>");
+        document.write(arr4 +"<br>");
+
+    }
+    function add_first()
+    {
+        value = prompt("Enter the value to be added in first array");
+        arr.unshift(value);
+        var arr3 = arr.join(' ');
+        document.write("<h3>first array is: </h3>");
+        document.write(arr3 + "<br>");
+
+        value2 = prompt("Enter the value to be added in second array");
+        arr2.unshift(value2);
+        var arr4 = arr2.join(' ');
+        document.write("<h3>Second array is: </h3>");
+        document.write(arr4 +"<br>");
+
+    }
+    
+</script>
+</html>
