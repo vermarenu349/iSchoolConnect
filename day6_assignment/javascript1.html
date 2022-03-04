@@ -17,8 +17,10 @@
     }
     button{
         margin-right:10px;
+        margin-top: 10px;
         background-color: tomato;
         height: 30px;
+        
     }
     </style>
     
@@ -45,7 +47,13 @@
     document.write("<button onclick='last()'>Get Last Element of Array</button>");
     document.write("<button onclick='first()'>Get First Element of Array</button>");
     document.write("<button onclick='add_last()'>Add Element at last</button>");
-    document.write("<button onclick='add_first()'>Add Element at First</button>");
+    document.write("<button onclick='add_first()'>Add Element at Start</button>");
+    document.write("<button onclick='slc()'>Slice the array</button>");
+    document.write("<button onclick='changing()'>Splice the array</button>");
+    document.write("<button onclick='rev()'>Reverse the array</button>");
+    document.write("<button onclick='arrange()'>Sort the array</button>");
+    document.write("<button onclick='arraytostring()'>Convert array to string</button>");
+    document.write("<button onclick='arraytolocalstring()'>coverting to local string</button>");
     function con(){
     document.write("<h3> Concatenate Array:</h3>")
     var arr3 = arr.concat(arr2);
@@ -53,6 +61,7 @@
     {
         document.write(arr3[i] + " ");
     }
+    document.close();
     }
     function jo(){
         document.write("<h3> Converting first Array to String:</h3>");
@@ -61,20 +70,23 @@
         document.write("<h3> Converting second Array to String:</h3>");
         var arr4 = arr2.join(' ');
         document.write(arr4);
+        document.close();
+
     }
     function last(){
         document.write("<h3>Last Element of first array is:</h3>");
         document.write(arr.pop());
         document.write("<h3>Last Element of Second array is:</h3>");
-        document.write(arr2.pop());   
+        document.write(arr2.pop());  
+        document.close(); 
     }
     function first(){
         document.write("<h3>First Element of first array is:</h3>");
         document.write(arr.shift());
         document.write("<h3>First Element of Second array is:</h3>");
         document.write(arr2.shift());   
+        document.close();
     }
-    
     function add_last(){
         value = prompt("Enter the value to be added in first array");
         arr.push(value);
@@ -87,6 +99,7 @@
         var arr4 = arr2.join(' ');
         document.write("<h3>Second array is: </h3>");
         document.write(arr4 +"<br>");
+        document.close();
 
     }
     function add_first()
@@ -102,8 +115,46 @@
         var arr4 = arr2.join(' ');
         document.write("<h3>Second array is: </h3>");
         document.write(arr4 +"<br>");
+        document.close();
 
     }
-    
+    function slc(){
+        value1 = prompt("Enter the starting index for slicing the array");
+        value2 = prompt("Enter the ending index for slicing the array");
+        var arr3 = arr.slice(value1,value2);
+        document.write("<h3>first array after slicing is: </h3>");
+        document.write(arr3 + "<br>");
+        document.close();
+    }
+    function changing(){
+        value1 = prompt("Enter the starting index for slicing the array");
+        value2 = prompt("Enter the delete count ");
+        var value3 = prompt("enter the string to be placed");
+        arr.splice(value1,value2,value3);
+        document.write("<h3>first array after splicing is: </h3>");
+        document.write(arr + "<br>");
+        document.close();
+    }
+    function rev(){
+        document.write("<h3>first array after Reversing is: </h3>");
+        document.write(arr.reverse() + "<br>");
+        document.close();
+    }
+   function arrange(){
+    document.write("<h3>Sorting Second array in ascending order: </h3>");
+        document.write(arr2.sort() + "<br>");
+        document.close();
+   }
+   function arraytostring(){
+    document.write("<h3>Converting second array to string</h3>");
+        document.write(arr2.toString() + "<br>");
+        document.close();  
+   }
+   function arraytolocalstring(){
+    document.write("<h3>Converting second array to local string</h3>");
+        document.write(arr2.toLocaleString() + "<br>");
+        document.close();  
+   }
+    document.close();
 </script>
 </html>
