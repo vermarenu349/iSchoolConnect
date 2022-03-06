@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Properties</title>
+    <style>
+        section{
+            border: 1px solid transparent;
+        }
+        article{
+            background-color: aquamarine;
+            font-size: 15px;
+            padding: 2px;
+            margin:10px;
+        }
+    </style>
+</head>
+<body><section>
+    <article id="1">
+        <h3>Document.body</h3>
+        <p>It only returns the content present in the body Tag. 
+        This property is used to change the present content inside the body element and sets them with the new specified content.</p>
+         <button onclick="change()">To change the content of body</button>
+    </article>
+    <article id="2">
+        <h3>Document.title</h3>
+        <p>The title property sets or returns the title of the document.</p> 
+        <p>Title of this document is: </p>
+        <p id="tit"></p>
+    </article>
+    <article id="3">
+        <h3>Document.forms[0]</h3>
+        <p>The forms read-only property of the Document interface returns an HTMLCollection listing all the form elements contained in the document.</p>
+            <form name="userfirstname" id="first" >
+               <label for="fname">First Name: </label> <input type="text" name="fname">
+                </form>
+            <form id="last" name="userlastname">
+                <label for="fname"> Last Name: </label>  <input type="text" name="lname">
+            </form>
+        <p id="form"></p>
+    </article>
+    <article id="4">
+        <h3>Document.formName</h3>
+        
+        <p>Used to get the name of the form element in a HTML document</p>
+        <p id="forname"></p>
+    </article>
+    <article id="5">
+        <h3>Document.images[]</h3>
+        <p>The images property returns a collection of all img elements in a document.</p>
+        <img src="css-images/001.jpg">
+        <img src="css-images/005.jpg">
+        <img src="css-images/003.jpg">
+        <img src="css-images/004.jpg">
+        <p id="image"></p>
+    </article>
+    <article id="6">
+        <h3>document.scripts</h3>
+        <p>The scripts property returns a collection of all script elements in the document.It returns an HTMLCollection.</p>
+        <p id="text"></p>
+    </article>
+    <article id="7">
+        <h3>document.links</h3>
+        <p>The links read-only property of the Document interface returns a collection of all area elements and a elements in a document with a value for the href attribute.</p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/links">Module for links.</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/forms">Module for forms.</a>
+        <p id="link"></p>
+    </article>
+    <article id="8">
+        <h3>Document.domain</h3>
+        <p>The domain property returns the domain name of the server (the document was loaded from).
+
+            The domain property returns null if the document was created in memory.</p>
+            <p id="domain"></p>
+    </article>
+</section>
+  <script>
+      function change(){
+          document.body.innerHTML = "<article>" +"<h3>"+"Document.body"+"</h3>" +"<p>" + "Content of Paragraph gets Changed" + "</p>" +"</article>";
+      }
+      document.getElementById("tit").innerHTML = document.title;
+      document.getElementById("form").innerHTML = document.forms[0].id;
+      document.getElementById("forname").innerHTML = document.forms["formName"];
+     document.getElementById("image").innerHTML = document.images[2].src;
+     document.getElementById("text").innerHTML = document.scripts.length;
+      document.getElementById("links").innerHTML = document.links;
+      document.getElementById("domain").innerHTML = document.domain;
+  </script>  
+    
+</body>
+</html>
