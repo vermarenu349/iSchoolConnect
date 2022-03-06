@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            border: 1px solid transparent;
+            background-color: darkgray;
+        }
+        h1{
+            background-color: tomato;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+        h3{
+            display: inline;
+            padding: 10px;
+        }
+        article{
+            background-color: aqua;
+            margin: 10px;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            height: 30px;
+            padding: 10px;
+        }
+        p{
+            display: inline;
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+            
+        }
+        #p1{
+            margin:20px;
+            display: block;
+            background-color: yellow;
+            height: 20px;
+            font-size: 15px;
+            padding:5px;
+            display:inline;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>String Methods</h1>
+        <h3>Given String is:</h3>
+        <p id="p1"></p>
+        <article id="1">Character at a index(i.e.6 for this example) is: <p id="p2"></p></article>
+        <article id="2">To find Character at last index(s.charAt(s.length-1)) is: <p id="p3"></p></article>
+        <article id="3">To find the substring of given string(s.substring(starting_index,ending_index)) is:<p id="p4"> </p></article>
+        <article id="4">To find the substring using slice(s.slice(first_index,last_index)) is: <p id="p5"></p></article>
+        <article id="5">To find the substring from last(s.slice(-6)) is: <p id="p6"></p></article>
+        <article id="6">To find the first index of the given letter(s.indexOf(letter(i.e. "e"))) is: <p id="p7"></p></article>
+        <article id="7">To find the last index of the given letter(s.lastindexof(letter(i.e. "H"))) is: <p id="p8"></p></article>
+        <article id="8">To find the position of letter after a given index or at that index(s.indexof(letter,index(i.e. "a",6))) is:<p id="p9"></p></article>
+        <article id="9">To convert string into array(i.e. s.split(" , ")) is: <p id="p10"></p></article>
+        <article id="10">To replace all instances(s.replace("replacing_character","Character_to_replaced")(i.e. "How are You","Are you fine")) is:<p id="p11"></p></article>
+        <article id="11">Changing the case of letters to upper case(s.touppercase()) is:<p id="p12"></p></article>
+        <article id="12">Changing the case of letters to lower case(s.tolowercase()) is:<p id="p13"></p></article>
+
+    </section>
+</body>
+<script>
+    var s = 'Hey! How are You';
+    var charfirst = s.charAt(6);
+    document.getElementById("p2").textContent = charfirst;
+    document.getElementById("p1").innerText = s;
+    document.getElementById("p3").innerText = s.charAt(s.length-1);
+    document.getElementById("p4").innerText = s.substring(2,9);
+    document.getElementById("p5").innerText = s.slice(4,12);
+    document.getElementById("p6").innerText = s.slice(-9);
+    document.getElementById("p7").innerText = s.indexOf("e");
+    document.getElementById("p8").innerHTML = s.lastIndexOf("H");
+    document.getElementById("p9").innerText = s.indexOf("a",6);
+    document.getElementById("p10").innerText = s.split(",");
+    document.getElementById("p11").innerText = s.replace('How are You','Are you fine');
+    document.getElementById("p12").innerText = s.toUpperCase();
+    document.getElementById("p13").innerText = s.toLowerCase();
+</script>
+</html>
