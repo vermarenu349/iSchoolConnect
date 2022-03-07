@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #log{
+            width: 1000px;
+            height: 500px;
+            background-color: rgb(80, 168, 168);
+            overflow: auto;
+            margin: auto;
+        }
+        button{
+            width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+        .box{
+           width:300px; 
+           background-color: darkgray;
+           float:left;
+           margin:10px;
+
+        }
+        .box img{
+            width: 200px;
+            background-color: darkgray;
+            padding-left: 50px;
+        }
+        .box h1{
+          margin:0px;
+          padding:10px;
+          text-align: center;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          background-color: burlywood;
+          color:brown;
+        }
+        .box h2,h3{
+          margin:0px;
+          padding:5px;
+          text-align: center;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          background-color: burlywood;
+          color:brown;
+          font-size: 18px;
+        }
+    </style>
+    <script>
+        var xhr= new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            console.log("ReadyState Value : ",xhr.readyState);
+            if(xhr.status == 200 && xhr.readyState == 4){
+                var herodata = JSON.parse(xhr.responseText).herolist;
+                console.log(herodata.length);
+                for(var i=0;i<herodata.length;i++)
+                {
+                    document.getElementById("log").innerHTML += "<div class='box'><h1>" + herodata[i].title+"</h1><h2>Full Name: "+ herodata[i].firstname+" "+ herodata[i].lastname+"</h2><img src='" + herodata[i].poster +"' alt='"+ herodata[i].title+"'><h3>City: "+herodata[i].city +"</h3><h3>Ticket Price: "+ herodata[i].ticketprice+"</h3><h3>Release Date: "+herodata[i].releasedate+"</h3></div>";
+
+                }
+            }else{
+              console.log(xhr.readyState);      }
+        };
+        document.addEventListener("DOMContentLoaded",function(){
+            xhr.open("get","data.json",true);
+                xhr.send();
+        })
+    </script>
+</head>
+<body>
+<div id="log"></div>
+</body>
+</html>

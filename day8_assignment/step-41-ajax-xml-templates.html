@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #log{
+            width: 1000px;
+            height: 500px;
+            background-color: rgb(80, 168, 168);
+            overflow: auto;
+            margin: auto;
+        }
+        button{
+            width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+        .box{
+           width:300px; 
+           background-color: darkgray;
+           float:left;
+           margin:10px;
+           border: 1px solid transparent;
+        }
+        .box img{
+            width: 200px;
+            background-color: darkgray;
+            margin-left: 10px;
+        }
+        .box h1{
+          margin:0px;
+          padding:10px;
+          text-align: center;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          background-color: burlywood;
+          color:brown;
+        }
+        .box h2,h3{
+          margin:0px;
+          padding:5px;
+          text-align: center;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          background-color: burlywood;
+          color:brown;
+          font-size: 18px;
+        }
+
+    </style>
+    <script>
+        var xhr= new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            console.log("ReadyState Value : ",xhr.readyState);
+            if(xhr.status == 200 && xhr.readyState == 4){
+                //console.log(xhr.responseText);
+                var hero = xhr.responseXML.getElementsByTagName("hl");
+                for(var i=0;i<hero.length;i++)
+                {
+                    //document.getElementById("hl").innerHTML += "<li>" +xhr.responseXML.getElementsByTagName("title")[i].firstChild.nodeValue+"</li>";
+                    document.getElementById("log").innerHTML += "<div class='box'><h1>" +hero[i].querySelector("title").innerHTML +"</h1><h2>Full Name: "+ hero[i].querySelector("firstname").innerHTML+" "+ hero[i].querySelector("lastname").innerHTML+"</h2><img src='" + hero[i].querySelector("poster").innerHTML +"' alt='"+ hero[i].querySelector("title").innerHTML+"'><h3>City: "+ hero[i].querySelector("city").innerHTML +"</h3><h3>Ticket Price: "+ hero[i].querySelector("ticketprice").innerHTML+"</h3><h3>Release Date: "+ hero[i].querySelector("releasedate").innerHTML+"</h3></div>";
+                }
+                
+            }else{
+               // console.log(xhr.readyState);
+               document.getElementById("container").innerHTML ="XHR status: " + xhr.status + " | XHR Status Text : " + xhr.statusText;
+            }
+        };
+        document.addEventListener("DOMContentLoaded",function(){
+            xhr.open("get","data.xml",true);
+            xhr.send();
+        })
+    </script>
+</head>
+<body>
+<div id="log">
+    
+</div>
+
+
+</body>
+</html>
