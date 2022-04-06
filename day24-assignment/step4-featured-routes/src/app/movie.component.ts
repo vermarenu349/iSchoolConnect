@@ -17,6 +17,7 @@ import { MovieService } from './moviedetails.service';
   <h5>About Movie:</h5>{{sMovie.plot}}
   <br>
   <button><a [routerLink]="['/editmovie']" [queryParams]="{mid:sMovie.id}">Edit {{sMovie.title}}</a></button>
+  <button><a [routerLink]="['/editmovie']">Add New Movie</a></button>
   </div>
   `,
   styles: []
