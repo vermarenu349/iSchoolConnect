@@ -27,6 +27,8 @@ import { HeroService } from './herodetails.service';
       </ul>
   </ul>
   <button><a [routerLink]="['/edithero']" [queryParams]="{heroid:selectedHero.id}">Edit {{selectedHero.name}}</a></button>
+  <button><a [routerLink]="['/addhero']">Add New Hero</a></button>
+
   `,
   styles: [
     `
